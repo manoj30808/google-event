@@ -1,0 +1,42 @@
+{
+    "name": "msppack/ddscalendar",
+    "keywords": ["Calendar","google-calendar","event-calendar","laravel-event-calendar","google-event-calendar"],
+    "description": "Use for esaly manage event or task with google event and calendar",
+    "authors": [
+        {
+            "name": "Manoj Sonagra",
+            "email": "manoj30808@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.0",
+        "spatie/laravel-google-calendar": "^1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "MspPack\\DDSCalendar\\": "src"
+        }
+    },
+     "scripts": {
+        "post-create-project-cmd": [
+            "php artisan migrate",
+            "php artisan vendor:publish"
+        ],
+        "post-install-cmd": [
+            "Illuminate\\Foundation\\ComposerScripts::postInstall",
+            "php artisan optimize"
+        ],
+        "post-update-cmd": [
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
+            "php artisan optimize"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MspPack\\DDSCalendar\\DDSCalendarServiceProvider"
+            ]
+        }
+    }
+
+}
